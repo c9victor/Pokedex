@@ -15,8 +15,9 @@ func startRepl() {
 	scanner := bufio.NewScanner(os.Stdin)
 	cache := structs.NewCache(5 * time.Minute)
 	cfg := &structs.Config{
-		Commands: getCommands(),
-		Cache:    cache,
+		Commands:    getCommands(),
+		Cache:       cache,
+		UserPokedex: make(map[string]structs.Pokemon),
 	}
 
 	for {
