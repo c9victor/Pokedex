@@ -81,5 +81,15 @@ func getCommands() map[string]structs.CliCommand {
 		Description: "Attempt to catch a Pokemon! Argument POKEMON required",
 		Callback:    commands.CommandCatch,
 	}
+	cmds["inspect"] = structs.CliCommand{
+		Name:        "inspect <POKEMON>",
+		Description: "Take a look at the pokemon you have caught! Argument POKEMON required",
+		Callback:    commands.CommandInspect,
+	}
+	cmds["pokedex"] = structs.CliCommand{
+		Name:        "pokedex",
+		Description: "Shows all the Pokemon you have caught!",
+		Callback:    commands.CommandPokedex,
+	}
 	return cmds
 }

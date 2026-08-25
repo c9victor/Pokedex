@@ -45,7 +45,7 @@ func CommandCatch(cfg *structs.Config, args ...string) error {
 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
 	val := rng.Intn(pokemon.BaseExperience)
 
-	if val > int(math.Floor(float64(pokemon.BaseExperience)*0.7)) {
+	if val > int(math.Floor(float64(pokemon.BaseExperience)*0.4)) {
 		cfg.UserPokedex[pokemonToCatch] = pokemon
 
 		// FOR TESTING PURPOSES
